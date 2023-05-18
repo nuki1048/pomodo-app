@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&family=Roboto+Slab:wght@700&family=Space+Mono:wght@700&display=swap');
+@import './base/variables.scss';
+@import './base/titles.scss';
+@import './base/text.scss';
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Kumbh Sans', sans-serif;
+  color: $brandGreyBlue;
+  background-color: $brandBGColor;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

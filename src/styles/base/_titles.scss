@@ -1,0 +1,13 @@
+@import './mixins.scss';
+h1 {
+  @include headerH1;
+}
+h2 {
+  @include headerH2;
+}
+h3 {
+  @include headerH3;
+}
+h4 {
+  @include headerH4;
+}

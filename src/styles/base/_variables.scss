@@ -1,0 +1,41 @@
+$brandOrange: #f87070;
+$brandBlue: #70f3f8;
+$brandPink: #d881f8;
+$brandGreyBlue: #d7e0ff;
+$brandWhite: #ffffff;
+$brandGrey: #eff1fa;
+$brandDarkBlue: #161932;
+$brandBGColor: #1e213f;
+//html[data-theme='#F87070'] {
+//  $mainColor: #f87070;
+//}
+////$theme-colors: (
+//  primary: $color-primary,
+//  secondary: $color-secondary,
+//  support: $color-support
+//);
+
+//@function theme-color($key) {
+//  @return map-get($theme-colors, $key);
+//}
+:root {
+  --main-color: #f87070;
+  --brand-orange: #f87070;
+  --brand-blue: #70f3f8;
+  --brand-pink: #d881f8;
+  --brand-grey-blue: #d7e0ff;
+  --brand-white: #ffffff;
+  --brand-grey: #eff1fa;
+  --brand-dark-blue: #161932;
+  --brand-background-color: #1e213f;
+}
+
+.blue-theme {
+  --main-color: #70f3f8;
+}
+.orange-theme {
+  --main-color: #f87070;
+}
+.pink-theme {
+  --main-color: #d881f8;
+}

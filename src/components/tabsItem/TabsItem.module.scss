@@ -1,0 +1,24 @@
+@import '../../styles/base/variables.scss';
+@import '../../styles/base/mixins.scss';
+.tabs {
+  &_item,
+  &_item_active {
+    @include bodyTextTwo;
+    width: 120px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  &_item_active {
+    background: var(--main-color);
+    color: var(--brand-background-color);
+    border-radius: 26.5px;
+    opacity: 1;
+    transition: 0.5s ease;
+    &:hover {
+      filter: brightness(1.2);
+    }
+  }
+}

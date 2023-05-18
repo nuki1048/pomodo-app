@@ -1,0 +1,109 @@
+@import '../../styles/base/variables';
+.countDown {
+  &_wrapper {
+    margin-top: 45px;
+    width: 410px;
+    height: 410px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &_circle {
+    position: relative;
+    padding: 22px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: linear-gradient(315deg, #2e325a 0%, #0e112a 100%);
+    box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #121530;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 366px;
+      height: 366px;
+      border-radius: 50%;
+      background: $brandDarkBlue;
+    }
+  }
+  &_outlineCirle {
+    position: relative;
+    width: 339px;
+    height: 339px;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    background: conic-gradient(
+      var(--main-color) 360deg,
+      var(--brand-dark-blue) 0deg
+    );
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 325px;
+      height: 325px;
+      border-radius: 50%;
+      background: var(--brand-dark-blue);
+    }
+  }
+
+  &_values {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &_subtitle {
+    margin-top: 14px;
+    cursor: pointer;
+  }
+  &_title {
+    margin-bottom: 1px;
+  }
+}
+@media (max-width: 576px) {
+  .countDown {
+    &_wrapper {
+      width: 300px;
+      height: 300px;
+    }
+    &_circle {
+      &::before {
+        width: 270px;
+        height: 270px;
+      }
+    }
+    &_outlineCirle {
+      width: 250px;
+      height: 250px;
+      &::before {
+        width: 230px;
+        height: 230px;
+      }
+    }
+    &_title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 80px;
+      line-height: 99px;
+      text-align: center;
+      letter-spacing: -4px;
+    }
+    &_subtitle {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 13.125px;
+    }
+  }
+}

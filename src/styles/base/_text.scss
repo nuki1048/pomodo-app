@@ -1,0 +1,7 @@
+@import './mixins.scss';
+p {
+  @include bodyTextOne;
+}
+span {
+  @include bodyTextTwo;
+}

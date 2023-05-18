@@ -1,20 +1,35 @@
-import logo from './assets/images/logo.svg';
+import Container from './components/container/Container';
+import Modal from './components/modal/Modal';
+import Tabs from './components/tabs/Tabs';
+import Title from './components/title/Title';
+import { useTheme } from './hooks/useTheme';
+// styles
+import './styles/style.scss';
 
 function App() {
+  let clazz = 'app';
+  const { font, color } = useTheme();
+  switch (color) {
+    case '#F87070':
+      clazz += ' orange-theme';
+      break;
+    case '#70F3F8':
+      clazz += ' blue-theme';
+      break;
+    case '#D881F8':
+      clazz += ' pink-theme';
+      break;
+    default:
+      clazz += ' orange-theme';
+      break;
+  }
   return (
-    <div className="app">
-      <header className="app-header">
-        <img src={logo} className="app-logo" alt="logo" />
-        <p className="header">Vite React Starter 💯</p>
-        <p>
-          Vite + React <br />
-          ESLint + Prettier + Stylelint
-          <br />
-          Sass + Emotion + Tailwind
-          <br />
-          Jest + Testing Library
-        </p>
-      </header>
+    <div className={clazz} style={{ fontFamily: font }}>
+      <Container>
+        <Title />
+        <Tabs />
+        <Modal />
+      </Container>
     </div>
   );
 }

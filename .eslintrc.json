@@ -3,13 +3,13 @@
   "env": {
     "browser": true,
     "es2021": true,
-    "jest/globals": true,
+
     "node": true
   },
   "plugins": [
     "react",
     "jsx-a11y",
-    "jest",
+
     "import",
     "unused-imports"
   ],
@@ -17,7 +17,7 @@
     "airbnb",
     "airbnb/hooks",
     "plugin:import/recommended",
-    "plugin:jest/recommended",
+
     "plugin:jsx-a11y/recommended",
     "prettier"
   ],
