@@ -7,20 +7,20 @@ import { useTheme } from './hooks/useTheme';
 import './styles/style.scss';
 
 function App() {
-  let clazz = 'app';
+  let clazz = '';
   const { font, color } = useTheme();
   switch (color) {
     case '#F87070':
-      clazz += ' orange-theme';
+      clazz = 'orange-theme';
       break;
     case '#70F3F8':
-      clazz += ' blue-theme';
+      clazz = 'blue-theme';
       break;
     case '#D881F8':
-      clazz += ' pink-theme';
+      clazz = 'pink-theme';
       break;
     default:
-      clazz += ' orange-theme';
+      clazz = 'orange-theme';
       break;
   }
   return (

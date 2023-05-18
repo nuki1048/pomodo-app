@@ -1,16 +1,7 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 
-import styles from './Title.module.scss';
+import logo from '../../assets/icons/logo.svg';
 
-const Title = ({ text }) => <h5 className={styles.title}>{text}</h5>;
+const Title = () => <img src={logo} alt="Logo pomodoro " />;
 
 export default Title;
-
-Title.propTypes = {
-  text: PropTypes.string
-};
-
-Title.defaultProps = {
-  text: 'pomodoro'
-};
