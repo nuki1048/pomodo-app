@@ -39,10 +39,7 @@
     border-radius: 50%;
     justify-content: center;
     align-items: center;
-    background: conic-gradient(
-      var(--main-color) 360deg,
-      var(--brand-dark-blue) 0deg
-    );
+    transition: background 0.5s;
 
     &:before {
       content: '';

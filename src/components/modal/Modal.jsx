@@ -4,6 +4,7 @@ import styles from './Modal.module.scss';
 import closeIcon from '../../assets/icons/icon-close.svg';
 import icon from '../../assets/icons/icon-settings.svg';
 import { useTheme } from '../../hooks/useTheme';
+import { useTimer } from '../../hooks/useTimer';
 
 const Modal = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +26,14 @@ const Modal = () => {
 const View = ({ isOpen, setIsOpen }) => {
   const { color, setColor, font, setFont } = useTheme();
   const colors = ['#F87070', '#70F3F8', '#D881F8'];
-
+  const {
+    pomodoroTimer,
+    setPomodoroTimer,
+    shortBreak,
+    setShortBreak,
+    longBreak,
+    setLongBreak
+  } = useTimer();
   const fonts = ['Kumbh Sans', 'Roboto Slab', 'Space Mono'];
 
   const handleSubmit = e => {
@@ -58,17 +66,29 @@ const View = ({ isOpen, setIsOpen }) => {
             {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label>
               <span>pomodoro</span>
-              <input type="number" />
+              <input
+                type="number"
+                value={pomodoroTimer}
+                onChange={e => setPomodoroTimer(e.target.value)}
+              />
             </label>
             {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label>
               <span>short break</span>
-              <input type="number" />
+              <input
+                type="number"
+                value={shortBreak}
+                onChange={e => setShortBreak(e.target.value)}
+              />
             </label>
             {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label>
               <span>long break</span>
-              <input type="number" />
+              <input
+                type="number"
+                value={longBreak}
+                onChange={e => setLongBreak(e.target.value)}
+              />
             </label>
           </div>
         </div>

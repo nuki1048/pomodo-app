@@ -1,18 +1,20 @@
 import { useState } from 'react';
 
 import styles from './Tabs.module.scss';
+import { useTimer } from '../../hooks/useTimer';
 import TabsItem from '../tabsItem/TabsItem';
 import CountdownTimer from '../сountdownTimer/CountdownTimer';
 
 const Tabs = () => {
   const [index, setIndex] = useState(0);
+  const { pomodoroTimer, shortBreak, longBreak } = useTimer();
   const showTab = i => {
     setIndex(i);
   };
   const tabsContent = [
-    <CountdownTimer time={2} />,
-    <CountdownTimer time={3} />,
-    <CountdownTimer time={4} />
+    <CountdownTimer time={+pomodoroTimer} />,
+    <CountdownTimer time={+shortBreak} />,
+    <CountdownTimer time={+longBreak} />
   ];
   const tabsItemsOptions = ['pomodoro', 'short break', 'long break'];
 
