@@ -11,16 +11,18 @@ const CountdownTimer = ({ time }) => {
   const [milliseconds, setMilliseconds] = useState(
     Math.floor(time * 60 * 1000)
   );
+  const minutes = Math.floor((milliseconds / (1000 * 60)) % 60);
+  const seconds = Math.floor((milliseconds / 1000) % 60);
   const gradientAngle =
     ((milliseconds % (time * 60 * 1000)) / (time * 60 * 1000)) * 360; // Обчислення кута градієнта
+
   const getZero = num => {
     if (num < 10) {
       return `0${num}`;
     }
     return num;
   };
-  const minutes = Math.floor((milliseconds / (1000 * 60)) % 60);
-  const seconds = Math.floor((milliseconds / 1000) % 60);
+
   const [timer, setTimer] = useState(
     `${getZero(minutes)}: ${getZero(seconds)}`
   );
@@ -50,6 +52,14 @@ const CountdownTimer = ({ time }) => {
       };
     }
   }, [play, milliseconds]);
+
+  useEffect(() => {
+    setMilliseconds(Math.floor(time * 60 * 1000));
+    const newMinutes = Math.floor((milliseconds / (1000 * 60)) % 60);
+    const newSeconds = Math.floor((milliseconds / 1000) % 60);
+    setTimer(`${getZero(newMinutes)}:${getZero(newSeconds)}`);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [time]); // This is necessary if the props time changes
 
   const clearTimer = () => {
     setMilliseconds(Math.floor(time * 60 * 1000));

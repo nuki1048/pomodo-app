@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import styles from './Tabs.module.scss';
 import { useTimer } from '../../hooks/useTimer';
@@ -11,11 +11,21 @@ const Tabs = () => {
   const showTab = i => {
     setIndex(i);
   };
-  const tabsContent = [
+  let tabsContent = [
     <CountdownTimer time={+pomodoroTimer} />,
     <CountdownTimer time={+shortBreak} />,
     <CountdownTimer time={+longBreak} />
   ];
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    tabsContent = [];
+    tabsContent = [
+      <CountdownTimer time={+pomodoroTimer} />,
+      <CountdownTimer time={+shortBreak} />,
+      <CountdownTimer time={+longBreak} />
+    ];
+  }, [pomodoroTimer, shortBreak, longBreak]);
+
   const tabsItemsOptions = ['pomodoro', 'short break', 'long break'];
 
   return (
